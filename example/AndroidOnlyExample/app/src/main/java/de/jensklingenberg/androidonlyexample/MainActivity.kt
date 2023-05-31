@@ -19,13 +19,16 @@ import io.ktor.client.HttpClient
 import io.ktor.client.plugins.contentnegotiation.ContentNegotiation
 import io.ktor.serialization.kotlinx.json.json
 import kotlinx.coroutines.launch
+import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.json.Json
+
+private val json = Json { isLenient = true; ignoreUnknownKeys = true }
 
 val ktorfit = ktorfit {
     baseUrl("https://catalog.flipp.dev/api/v0/")
     httpClient(HttpClient {
         install(ContentNegotiation) {
-            json(Json { isLenient = true; ignoreUnknownKeys = true })
+            json(json)
         }
     })
     converterFactories(
@@ -58,6 +61,13 @@ class MainActivity : ComponentActivity() {
         }
 
         lifecycleScope.launch {
+            // Loaded successful:
+            val response = api.getApplicationsString()
+            Log.i("MainActivity", response)
+            // Decoded successful:
+            val decodedAnswer = json.decodeFromString<Array<KtorfitApplicationShort>>(response)
+            Log.i("MainActivity", decodedAnswer.toList().toString())
+            // Crash:
             peopleState.value = api.getApplications().firstOrNull()
         }
     }

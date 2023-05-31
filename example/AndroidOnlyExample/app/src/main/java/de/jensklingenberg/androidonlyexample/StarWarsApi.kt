@@ -11,4 +11,6 @@ interface StarWarsApi {
 
     @GET("application")
     suspend fun getApplications(): Array<KtorfitApplicationShort>
+    @GET("application")
+    suspend fun getApplicationsString(): String
 }
