@@ -22,7 +22,7 @@ import kotlinx.coroutines.launch
 import kotlinx.serialization.json.Json
 
 val ktorfit = ktorfit {
-    baseUrl("https://swapi.dev/api/")
+    baseUrl("https://catalog.flipp.dev/api/v0/")
     httpClient(HttpClient {
         install(ContentNegotiation) {
             json(Json { isLenient = true; ignoreUnknownKeys = true })
@@ -39,7 +39,7 @@ val api: StarWarsApi = ktorfit.create<StarWarsApi>()
 class MainActivity : ComponentActivity() {
 
 
-    private val peopleState = mutableStateOf<Person?>(null)
+    private val peopleState = mutableStateOf<KtorfitApplicationShort?>(null)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -58,7 +58,7 @@ class MainActivity : ComponentActivity() {
         }
 
         lifecycleScope.launch {
-            peopleState.value = api.getPerson(1)
+            peopleState.value = api.getApplications().firstOrNull()
         }
     }
 }

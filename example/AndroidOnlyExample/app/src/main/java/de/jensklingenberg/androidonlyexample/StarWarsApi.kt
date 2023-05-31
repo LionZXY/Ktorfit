@@ -9,16 +9,6 @@ import kotlinx.coroutines.flow.Flow
 
 interface StarWarsApi {
 
-    @GET("people/{id}/")
-    suspend fun getPerson(@Path("id") personId: Int): Person
-
-    @GET("people")
-    fun getPeopleFlow(@Query("page") page: Int): Flow<Person>
-
-    @GET("people/{id}/")
-    fun getPersonCall(@Path("id") personId: Int): Call<Person>
-
-    @GET("people/{id}/")
-    suspend fun getPersonResponse(@Path("id") personId: Int): Response<Person>
-
+    @GET("application")
+    suspend fun getApplications(): Array<KtorfitApplicationShort>
 }
