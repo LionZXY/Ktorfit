@@ -25,14 +25,14 @@ mockk = "1.13.11"
 mockito-kotlin = "4.1.0"
 gradleMavenPublishPlugin = "0.28.0"
 vannikMavenPublish = "0.28.0"
-
+kgp = "2.0.0"
 [libraries]
 android-build-gradle = "com.android.tools.build:gradle:8.2.2"
 auto-service-ksp = { module = "dev.zacsweers.autoservice:auto-service-ksp", version.ref = "autoServiceKsp" }
 autoService = { module = "com.google.auto.service:auto-service", version.ref = "autoService" }
 gradle-maven-publish-plugin = { module = "com.vanniktech:gradle-maven-publish-plugin", version.ref = "gradleMavenPublishPlugin" }
 kotlin-gradle-plugin-api = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin-api", version.ref = "kotlin" }
-ktorfit-gradle-plugin = { module = "de.jensklingenberg.ktorfit:ktorfit-gradle-plugin", version.ref = "ktorfitGradlePlugin" }
+ktorfit-gradle-plugin = { module = "de.jensklingenberg.ktorfit:ktorfit-gradle-plugin", version.ref = "kgp" }
 junit = { module = "junit:junit", version.ref = "junit" }
 kctfork-core = { module = "dev.zacsweers.kctfork:core", version.ref = "kctfork" }
 kctfork-ksp = { module = "dev.zacsweers.kctfork:ksp", version.ref = "kctfork" }

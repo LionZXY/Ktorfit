@@ -19,7 +19,7 @@ pluginManagement {
     resolutionStrategy {
         eachPlugin {
             if (requested.id.id == "de.jensklingenberg.ktorfit") {
-                useModule("de.jensklingenberg.ktorfit:de.jensklingenberg.ktorfit.gradle.plugin:${requested.version}")
+                useModule("de.jensklingenberg.ktorfit:de.jensklingenberg.ktorfit.gradle.plugin:2.0.0")
             }
         }
     }
@@ -32,7 +32,6 @@ plugins {
 
 rootProject.name = "Ktorfit"
 include(":ktorfit-gradle-plugin")
-include(":sandbox")
 include(":ktorfit-ksp")
 include(":ktorfit-compiler-plugin")
 include(":ktorfit-lib-core")
