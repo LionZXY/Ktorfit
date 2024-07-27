@@ -97,9 +97,9 @@ internal class CreateFuncTransformer(
 
                 // Set _ExampleApiProvider() as argument for create<ExampleApi>()
                 irCall.putValueArgument(0, newCall)
-                debugLogger.log(
+                /*debugLogger.log(
                     "Transformed " + argumentType.originalKotlinType.toString() + " to _$className" + "Provider",
-                )
+                )*/
                 return super.visitExpression(irCall)
             }
         }
