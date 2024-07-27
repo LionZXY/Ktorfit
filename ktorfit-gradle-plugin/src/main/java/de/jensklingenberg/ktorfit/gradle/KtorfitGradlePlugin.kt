@@ -54,7 +54,7 @@ class KtorfitGradlePlugin : Plugin<Project> {
                     )
                 }
 
-                val dependency = "$ktorfitKsp:$KTORFIT_VERSION-$kspVersion$SNAPSHOT"
+                val dependency = "$ktorfitKsp:e1872c34ae"
 
                 when (val kotlinExtension = kotlinExtension) {
                     is KotlinSingleTargetExtension<*> -> {
